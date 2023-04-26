@@ -1,4 +1,4 @@
-﻿using DbRelationshipsForDevelopersProjectsPOC.Core;
+﻿using DbRelationshipsForDevelopersProjectsPOC.Core.Common;
 
 namespace DbRelationshipsForDevelopersProjectsPOC.DbEntites
 {

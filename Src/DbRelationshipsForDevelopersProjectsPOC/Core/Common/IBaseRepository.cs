@@ -1,4 +1,4 @@
-﻿namespace DbRelationshipsForDevelopersProjectsPOC.Core
+﻿namespace DbRelationshipsForDevelopersProjectsPOC.Core.Common
 {
     public interface IBaseRepository<TEntity> where TEntity : class, IIdEntity
     {

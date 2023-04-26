@@ -1,4 +1,4 @@
-﻿using DbRelationshipsForDevelopersProjectsPOC.Core;
+﻿using DbRelationshipsForDevelopersProjectsPOC.Core.Interfaces;
 using DbRelationshipsForDevelopersProjectsPOC.DbEntites;
 using DbRelationshipsForDevelopersProjectsPOC.Model;
 using Microsoft.AspNetCore.Mvc;

@@ -1,8 +1,10 @@
-﻿using DbRelationshipsForDevelopersProjectsPOC.DbEntites;
+﻿using DbRelationshipsForDevelopersProjectsPOC.Core.Common;
+using DbRelationshipsForDevelopersProjectsPOC.Core.Interfaces;
+using DbRelationshipsForDevelopersProjectsPOC.DbEntites;
 using DbRelationshipsForDevelopersProjectsPOC.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace DbRelationshipsForDevelopersProjectsPOC.Core
+namespace DbRelationshipsForDevelopersProjectsPOC.Core.Repositories
 {
     public class ProjectRepository : BaseRepository<ApplicationDbContext, Project>, IProjectRepository
     {

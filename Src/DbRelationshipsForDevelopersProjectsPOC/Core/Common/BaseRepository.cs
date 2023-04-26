@@ -1,18 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace DbRelationshipsForDevelopersProjectsPOC.Core
+namespace DbRelationshipsForDevelopersProjectsPOC.Core.Common
 {
-    public abstract class BaseRepository<TDbContext, TDbEntity> 
+    public abstract class BaseRepository<TDbContext, TDbEntity>
         : IBaseRepository<TDbEntity>, IDisposable
         where TDbContext : DbContext
-        where TDbEntity: class, IIdEntity
+        where TDbEntity : class, IIdEntity
     {
         private const string InvalidIdErrorMessage = "Id not found in database!";
         protected readonly TDbContext _context;
 
         public BaseRepository(TDbContext context)
         {
-            this._context = context;
+            _context = context;
         }
 
         public async virtual Task<List<TDbEntity>> GetAllAsync()

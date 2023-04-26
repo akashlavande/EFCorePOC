@@ -1,4 +1,5 @@
-using DbRelationshipsForDevelopersProjectsPOC.Core;
+using DbRelationshipsForDevelopersProjectsPOC.Core.Interfaces;
+using DbRelationshipsForDevelopersProjectsPOC.Core.Repositories;
 using DbRelationshipsForDevelopersProjectsPOC.DbEntites;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
