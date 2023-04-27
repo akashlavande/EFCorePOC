@@ -55,7 +55,6 @@ namespace DbRelationshipsForDevelopersProjectsPOC_Test
             Assert.Equal(expectedBotName, data.Name);
         }
 
-
         [Fact]
         public async void CreateProject_NewlyCreatedProject()
         {
@@ -77,6 +76,34 @@ namespace DbRelationshipsForDevelopersProjectsPOC_Test
 
             Assert.IsType<OkObjectResult>(result);
             var res = Assert.IsType<Project>(result.Value);
+        }
+
+        [Fact]
+        public async void UpdateProject_UpdatedProject()
+        {
+            var updateProject = new Project()
+            {
+                Id = Guid.Parse("660bb6bb-74f8-43f7-9f8b-7d62e6bf6d18"),
+                Name = "Simplifai Document Bot",
+                StartDate = DateTime.UtcNow,
+                EndDate = DateTime.UtcNow.AddDays(10)
+            };
+
+            _mock.Setup(option => option.UpdateAsync(It.IsAny<Project>()).Result)
+                .Callback((Project req) =>
+                {
+                    var project = Projects.FirstOrDefault(o => o.Id == req.Id);
+                    project.StartDate = req.StartDate;
+                    project.EndDate = req.EndDate;
+                    project.Name = req.Name;
+                    project.Developer = req.Developer;
+
+                }).Returns(updateProject);
+
+            var result = await _projectController.UpdateProject(updateProject) as ObjectResult;
+
+            Assert.IsType<OkObjectResult>(result);
+            Assert.IsType<Project>(result.Value);
         }
 
         [Theory]
